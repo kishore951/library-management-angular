@@ -7,17 +7,22 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AddBookComponent } from './add-book/add-book.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ViewBookComponent } from './view-book/view-book.component';
 
 const appRoutes:Routes=[
   {
     path:"",component:AddBookComponent
+  },
+  {
+    path:"view",component:ViewBookComponent
   }
 ]
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    AddBookComponent
+    AddBookComponent,
+    ViewBookComponent
   ],
   imports: [
     BrowserModule,

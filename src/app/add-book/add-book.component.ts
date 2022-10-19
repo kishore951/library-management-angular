@@ -1,0 +1,30 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-add-book',
+  templateUrl: './add-book.component.html',
+  styleUrls: ['./add-book.component.css']
+})
+export class AddBookComponent implements OnInit {
+
+  constructor() { }
+
+  name=""
+  description=""
+  author=""
+
+  readValues=()=>{
+let data = {
+  "name":this.name,
+  "description":this.description,
+  "author":this.author
+  
+}
+ console.log(data);
+
+  }
+
+  ngOnInit(): void {
+  }
+
+}

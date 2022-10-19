@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-view-book',
@@ -7,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewBookComponent implements OnInit {
 
-  constructor() { }
+  constructor(private myapi:ApiService) { 
+    this.fetchData()
+  }
 
-  fetchData=[{"id":1,"bookTitle":"Ponniyin Selvan","description":"History of Cholas","author":"Kalki"},{"id":2,"bookTitle":"Phoenix","description":"Horror","author":"Kaur"},{"id":3,"bookTitle":"AbilitybDaffodis","description":"Teaching","author":"Ankita"},{"id":4,"bookTitle":"Scarlet","description":"Entertainment","author":"JHA"},{"id":5,"bookTitle":"Human Values","description":"Entertainment","author":"Jugal"}]
+  fetchData=()=>{
+    this.myapi.viewBook().subscribe(
+      (data)=>{
+        this.viewBook=data
+      }
+    )
+  }
 
+  viewBook:any=[]
   ngOnInit(): void {
   }
 
